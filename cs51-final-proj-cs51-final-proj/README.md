@@ -1,33 +1,70 @@
-# Code samples for "Neural Networks and Deep Learning"
+Handwriting Recognition Tool
+============================
 
-This repository contains code samples for my (forthcoming) book on
-"Neural Networks and Deep Learning".
+To run:
 
-As the code is written to accompany the book, I don't intend to add
-new features.  However, bug reports are welcome, and you should feel
-free to fork and modify the code.
+# python gui.py
 
-## License
+You must have access to the following libraries:
 
-MIT License
+- Tkinter
+- PIL
+- numpy
+- scipy
+- cPickle
+- json
 
-Copyright (c) 2012-2015 Michael Nielsen
+From here, you can import image files to be read by the 
+recognition network by name, and export the resulting text 
+into a .txt file of your choice.
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+### Recognition.py and Data.py
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+To run/train/test parameters on the neural network: 
+
+You must have access to the following libraries: 
+
+-random
+-numpy
+-json
+-sys
+
+To train a neural network with various parameters: 
+
+-Create an instace of the Recognition Class with 
+Recognition.Recognition([a,b,c], cost=CrossEntropyCost | 
+cost=QuadCost) where a is the number of neurons in the 
+input layer, b is the number in the middle layer, and c is 
+the number in the output layer. The optional agrument 
+allows you to choose the type of cost function used
+to define the cost in the network. Cross Entropy Proves
+more useful in preventing saturation for prolonged 
+learning. 
+
+Load testing and training data with the Data module: 
+
+- useing the Data.alpha_load() method, you will be given a 
+training and testing set of data, with the ratio (
+currently set to 4:1) defined in the Data module.
+
+Train the data set: 
+
+- Set the network to train with net.train(train_set, 
+number of runs, size of training samples, training parameter, optional test_data set, optional lambda 
+parameter for stbalizing the learning rate) 
+
+- if given testing data, the set set with print the 
+accuracy of the network's classification after every round. 
+
+To load data from the extraction module: 
+
+-use the Data.load_extracted(extracted_data) to run the data through our network and return a string of the result. 
+
+To save and load premade networks: 
+
+-simply use the Recognition.load('networkname.json') to 
+return a saved network, and (recog_object).save('savename')
+to store a network for future use/testing as a json object. 
+
+
