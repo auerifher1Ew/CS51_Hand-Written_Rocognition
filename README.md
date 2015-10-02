@@ -35,6 +35,7 @@ core functions.
 Design and Implementation
 
 Formatting
+
 The next step in our software, object separation, expects the image to be in the correct
 format with only white (255 bytes) or black (0 bytes) pixel data. In order to achieve this
 we made a formatting function using PIL and Numpy image processing libraries to
@@ -50,6 +51,7 @@ readable format.
 
 
 Object separation
+
 In order to make the recognition part work, we need to separate objects and make a
 numpy array. The “runExtr” function inside extraction3.py returns a numpy array. Numpy
 contains 0 if the color is black and it contains 1 if the color is white. In order to make the
@@ -79,6 +81,7 @@ output.
 
 
 Neural Network
+
 There were two main designheavy
 elements to this project. The first was the
 object separation and the second is the neural network algorithm. We developed our
@@ -116,6 +119,7 @@ such a complex and powerful tool as a neural network.
 
 
 GUI
+
 The GUI was created using a Python library called Tkinter, which allows for the
 implementation of various “widgets” that interact with the program and user in various
 ways. The main functions of our GUI is to actually run the program given input from the
@@ -129,6 +133,7 @@ widgets.
 
 
 Reflection
+
 How good was your original planning?
 While we were not able to make a interface with the accuracy we had hoped for a the start
 and failed to accurately estimate the time required for seemingly simple interfaces like GUI,
