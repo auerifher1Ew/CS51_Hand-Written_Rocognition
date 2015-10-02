@@ -1,9 +1,12 @@
 # CS51-Final-Project 2015 Spring
 
 Handwriting Recognition Tool
+
 Takehiro Matsuzawa, Emma Weil, Sofia Shapiro, Thomas Waite
+
 LINK TO DEMO VIDEO:
 https://www.youtube.com/watch?v=fUUym7US5g
+
 Overview
 We have implemented a program that recognizes alphabetic characters in
 handwritten text and return the text in a .txt file. The first major component of our
@@ -15,6 +18,8 @@ handwritten letter images, can recognize the characters extracted from the input
 Our program also utilizes a GUI and a number of supporting scripts and formatting
 modules that allow for the generation and appropriate formatting of data to be fed
 through our algorithms.
+
+
 Planning
 Here is our Draft Specification and Final Specification , we had originally planned
 to have the program recognize more complex handwritten sequences like mathematics
@@ -25,7 +30,10 @@ network rather than gathering data. The second part of our initial proposal that
 completely fulfilled is the complexity of our outputted text. We had intended to output the
 data in a more beautiful format, but again, our focus was directed toward developing our
 core functions.
+
+
 Design and Implementation
+
 Formatting
 The next step in our software, object separation, expects the image to be in the correct
 format with only white (255 bytes) or black (0 bytes) pixel data. In order to achieve this
@@ -39,6 +47,8 @@ darkest pixel value and compared every pixel to it. If the pixel was within a re
 amount of darkness away from this value it converted it to black (0) and everything else
 was converted to white (255). Then this list of pixel data was fed back into an image
 readable format.
+
+
 Object separation
 In order to make the recognition part work, we need to separate objects and make a
 numpy array. The “runExtr” function inside extraction3.py returns a numpy array. Numpy
@@ -66,6 +76,8 @@ is helpful to know later in our
 recognition algorithm. By looking at the row and whether a character has white space
 before itself, we see whether we need to put space before the character in the final
 output.
+
+
 Neural Network
 There were two main designheavy
 elements to this project. The first was the
@@ -101,6 +113,8 @@ functions and a method for “teaching” the network retroactively given the am
 error is associated with the calculated output and the real output. These were very
 interesting to learn about since they are rather simple ideas mathematically, but allow
 such a complex and powerful tool as a neural network.
+
+
 GUI
 The GUI was created using a Python library called Tkinter, which allows for the
 implementation of various “widgets” that interact with the program and user in various
@@ -112,6 +126,8 @@ GUI window. The text can then be exported into a .txt file with the name entered
 user at the bottom right of the window. Each of these fields is made with the Entry
 widget from Tkinter, and the text and images that appear in the window are Label
 widgets.
+
+
 Reflection
 How good was your original planning?
 While we were not able to make a interface with the accuracy we had hoped for a the start
@@ -171,12 +187,16 @@ important as separation of objects. I would consider installing the development 
 powerful machine if you are interesting in truly optimizing the performance of your network.
 Otherwise, it takes hours to run just 20 training session, which is somewhat of a letdown when
 most reach their optimal accuracy much later.
+
+
 Citations:
+
 [1] http://neuralnetworksanddeeplearning.com/
 This website, and it’s attached code, were our inspiration and
 example in the development of our own neural network interface.
+
+
 [2] http://en.wikipedia.org/wiki/Connectedcomponent_
 labeling
-We used the twopass
-algorithm in extraction3.py in order to
+We used the twopass algorithm in extraction3.py in order to
 separate different characters in inputted images.
